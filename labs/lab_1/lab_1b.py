@@ -41,12 +41,13 @@ def main():
     
     print(f"===== Simple Calculator =====")
 
-    # Ask the user for sample input    
+    # Ask the user for sample input   
     num1 = float(input("Enter the first number: "))
     num2 = float(input("Enter the second number: "))
     operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
-
-    # Perform the calculation and display the result
+    if operation not in ["add", "subtract", "multiply", "divide"]:
+        print(f"Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+        return
     result = simple_calculator(operation, num1, num2)
     print(f"The result of {operation}ing {num1} and {num2} is: {result}")
 
